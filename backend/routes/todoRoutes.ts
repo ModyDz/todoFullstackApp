@@ -1,5 +1,12 @@
 import { Router, Request, Response } from "express";
-import { newTodo } from "../controllers/todoControllers";
+import {
+  getOwnTodos,
+  getUserTodos,
+  newTodo,
+} from "../controllers/todoControllers";
+import { protect } from "../middleware/authMiddleware";
 const router = Router();
-router.post("/", newTodo);
+router.post("/", protect, newTodo);
+router.get("/me", protect, getOwnTodos);
+router.get("/:username", getUserTodos);
 export default router;
