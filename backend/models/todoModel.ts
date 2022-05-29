@@ -11,6 +11,7 @@ const todoSchema = new Schema(
       required: true,
       ref: "User",
     },
+    completed: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }
 );
