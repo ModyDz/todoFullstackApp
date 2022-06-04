@@ -1,11 +1,16 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+import { protect } from "../middleware/authMiddleware";
 import {
+  getUser,
   loginUser,
   registerUser,
-  searchUser,
+  searchUsers,
+  uploadUserPicture,
 } from "../controllers/userController";
 const router = Router();
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-router.get("/search", searchUser);
+router.put("/upload", protect, uploadUserPicture);
+router.get("/search", searchUsers);
+router.get("/:username", getUser);
 export default router;

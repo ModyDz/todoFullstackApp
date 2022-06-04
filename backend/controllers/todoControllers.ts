@@ -27,7 +27,7 @@ export const getUserTodos = asyncHandler(
       throw new Error("User not found");
     }
     const todos = await Todo.find({ user: user.id });
-    res.json({ todos });
+    res.json({ todos, username: user.displayName });
   }
 );
 export const toggleTodo = asyncHandler(async (req: Request, res: Response) => {
