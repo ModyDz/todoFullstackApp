@@ -16,11 +16,9 @@ const port = process.env.PORT || 5000;
 app.use("/api/user", userRoutes);
 app.use("/api/todo", todoRoutes);
 if (process.env.NODE_ENV) {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  app.use(express.static(path.join(__dirname, "../front/dist")));
   app.get("*", (req: Request, res: Response) =>
-    res.sendFile(
-      path.resolve(__dirname, "../", "frontend", "dist", "index.html")
-    )
+    res.sendFile(path.resolve(__dirname, "../", "front", "dist", "index.html"))
   );
 }
 
