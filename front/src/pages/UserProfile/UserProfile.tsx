@@ -21,7 +21,7 @@ export default function UserProfile() {
   const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.userState);
   useEffect(() => {
-    if (user && user?.username.toLowerCase() === username) {
+    if (user && user?.username.toLowerCase() === username?.toLowerCase()) {
       navigate("/user/me");
     }
   }, []);

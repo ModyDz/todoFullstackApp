@@ -14,14 +14,16 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 export default function UserTodos() {
   const { username } = useParams();
-  const { data, isLoading, isSuccess } = useGetUserTodosQuery(username!);
+  const { data, isLoading, isSuccess } = useGetUserTodosQuery(
+    username?.toLowerCase() as string
+  );
   const user = useSelector((state: RootState) => state.userState);
   const navigate = useNavigate();
   useEffect(() => {
     if (username?.toLowerCase() === user?.username.toLowerCase()) {
       navigate("/");
     }
-  }, [isSuccess]);
+  }, []);
   return (
     <TodosContainer>
       <Container>
