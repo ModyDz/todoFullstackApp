@@ -1,6 +1,4 @@
 import { Schema, model } from "mongoose";
-// @ts-ignore
-import mongooseFuzzySearching from "mongoose-fuzzy-searching";
 
 const userSchema = new Schema(
   {
@@ -17,6 +15,5 @@ const userSchema = new Schema(
   },
   { timestamps: true }
 );
-userSchema.plugin(mongooseFuzzySearching, { fields: ["username"] });
 const User = model("User", userSchema);
 export default User;

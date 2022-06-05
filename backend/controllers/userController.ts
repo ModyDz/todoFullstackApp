@@ -102,13 +102,10 @@ export const uploadUserPicture = asyncHandler(
 );
 export const searchUsers = asyncHandler(async (req: Request, res: Response) => {
   if (req.query.q) {
-    // @ts-ignore
-    const filteredUsers = await User.fuzzySearch(req.query.q).select([
-      "displayName",
-      "profilePicture",
-      "-_id",
-      "confidenceScore",
-    ]);
+    const queryRegex = new RegExp(req.query.q as string, "i");
+    const filteredUsers = await User.find({
+      username: { $regex: queryRegex },
+    }).select(["displayName", "profilePicture"]);
     res.json(filteredUsers);
   }
 });
