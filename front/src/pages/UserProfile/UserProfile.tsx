@@ -12,23 +12,24 @@ import {
   Button,
   CenterContainer,
 } from "./Components";
-import { toast } from "react-toastify";
+import LoadingSpinner from "../../components/LoadingSpinner";
 export default function UserProfile() {
   const { username } = useParams();
-  const { data, isError, isLoading, isSuccess, error } = useGetUserQuery(
-    username!
+  const { data, isLoading, isSuccess, isError } = useGetUserQuery(
+    username?.toLowerCase() as string
   );
   const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.userState);
   useEffect(() => {
-    if (user.username.toLowerCase() === username) {
+    if (user && user?.username.toLowerCase() === username) {
       navigate("/user/me");
     }
   }, []);
   return (
     <Container>
       <ProfileContainer>
-        {data && isSuccess ? (
+        {isLoading && <LoadingSpinner />}
+        {data && isSuccess && (
           <>
             <ProfilePicture>
               <Image src={data?.profilePicture} />
@@ -38,11 +39,13 @@ export default function UserProfile() {
               <Button>View todos</Button>
             </Link>
           </>
-        ) : (
-          <CenterContainer>
-            <h1>User not found</h1>
-          </CenterContainer>
         )}
+        {(!data && isSuccess) ||
+          (isError && (
+            <CenterContainer>
+              <h1>User not found</h1>
+            </CenterContainer>
+          ))}
       </ProfileContainer>
     </Container>
   );
