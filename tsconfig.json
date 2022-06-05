@@ -103,5 +103,5 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": false
   },
-  "exclude": ["node_modules", "frontend"]
+  "exclude": ["node_modules", "front"]
 }
