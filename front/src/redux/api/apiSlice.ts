@@ -4,7 +4,7 @@ import { todoData } from "../../types";
 export const apiSlice = createApi({
   reducerPath: "ApiSlice",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://192.168.1.90:5000/api/",
+    baseUrl: "https://todofullstackapp00.herokuapp.com/api/",
   }),
   tagTypes: ["User", "Todos"],
   endpoints: (builder) => ({
