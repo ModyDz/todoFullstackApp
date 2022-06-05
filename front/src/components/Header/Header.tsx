@@ -20,6 +20,7 @@ import {
   Image,
   Profile,
   NoResult,
+  StyledCloseIcon,
 } from "./Components";
 import { AccountBox, Logout } from "@mui/icons-material";
 import { useState } from "react";
@@ -138,7 +139,11 @@ export default function Header() {
           </>
         )}
       </Nav>
-      <StyledMenu onClick={() => setShowNavbar(!showNavbar)} />
+      {showNavbar ? (
+        <StyledCloseIcon onClick={() => setShowNavbar(!showNavbar)} />
+      ) : (
+        <StyledMenu onClick={() => setShowNavbar(!showNavbar)} />
+      )}
     </Container>
   );
 }

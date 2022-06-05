@@ -10,11 +10,6 @@ export const TodoInputModal = styled.div<{ state: boolean }>`
   justify-content: center;
   z-index: 100;
 `;
-export const TodoInput = styled.div`
-  background-color: red;
-  width: 400px;
-  height: 400px;
-`;
 export const InputContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -24,6 +19,16 @@ export const InputContainer = styled.form`
   width: 768px;
   padding: 2rem;
   position: relative;
+`;
+export const StyledCloseIcon = styled(CloseIcon)`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+`;
+export const TodoInput = styled.div`
+  background-color: red;
+  width: 400px;
+  height: 400px;
 `;
 export const InputLabel = styled.label`
   text-align: center;
@@ -61,9 +66,4 @@ export const Button = styled.button`
   &:active {
     transform: scale(0.9);
   }
-`;
-export const StyledCloseIcon = styled(CloseIcon)`
-  position: absolute;
-  top: 5px;
-  right: 5px;
 `;

@@ -41,20 +41,6 @@ export const Container = styled.div`
   position: relative;
   padding: 0 1rem;
 `;
-export const CompleteCheck = styled.div`
-  height: 40px;
-  width: 40px;
-  background-color: #e6e1e1;
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-export const TodoText = styled.div`
-  font-size: 1.6rem;
-`;
 export const AddNewTodo = styled.button<{ user: IUser }>`
   display: ${(props) => (props.user ? "flex" : "none")};
   align-items: center;
@@ -69,6 +55,27 @@ export const AddNewTodo = styled.button<{ user: IUser }>`
   border: none;
   cursor: pointer;
 `;
+export const CompleteCheck = styled.div`
+  height: 40px;
+  width: 40px;
+  background-color: #e6e1e1;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+export const StyledCheckIcon = styled(CheckIcon)``;
+export const TodoText = styled.div`
+  font-size: 1.6rem;
+`;
+export const StyledDeleteIcon = styled(DeleteIcon)`
+  cursor: pointer;
+  &:hover {
+    color: red;
+  }
+`;
 
 export const CenterContainer = styled.div`
   height: 100%;
@@ -77,11 +84,4 @@ export const CenterContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-`;
-export const StyledCheckIcon = styled(CheckIcon)``;
-export const StyledDeleteIcon = styled(DeleteIcon)`
-  cursor: pointer;
-  &:hover {
-    color: red;
-  }
 `;

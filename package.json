@@ -7,7 +7,7 @@
     "build": "npx tsc",
     "start": "node dist/index.js",
     "dev": "nodemon --files ./backend/index.ts",
-    "client": "npm start --prefix frontend",
+    "client": "npm start --prefix front",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build && npm install --prefix front && npm run build --prefix front"
   },
   "keywords": [],

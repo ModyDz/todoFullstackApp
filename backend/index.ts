@@ -4,11 +4,9 @@ import { connectDB } from "./config/db";
 import userRoutes from "./routes/userRoutes";
 import todoRoutes from "./routes/todoRoutes";
 import { errorHandler } from "./middleware/errorMiddleware";
-import cors from "cors";
 import path from "path";
 const app: Express = express();
 
-app.use(cors());
 dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

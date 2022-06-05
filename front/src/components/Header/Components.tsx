@@ -3,24 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { IUser } from "../../types";
-
-export const StyledLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-`;
-export const StyledMenu = styled(Menu)`
-  display: block;
-  position: absolute;
-  right: 5px;
-  z-index: 1000;
-  cursor: pointer;
-  font-size: 2.4rem;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-`;
+import CloseIcon from "@mui/icons-material/Close";
 export const Container = styled.header`
   background-color: black;
   color: white;
@@ -39,30 +22,6 @@ export const Logo = styled.h1`
   font-size: 1.6rem;
   @media screen and (min-width: 768px) {
     font-size: 2.2rem;
-  }
-`;
-export const Nav = styled.ul<{ state: boolean }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  z-index: 100;
-  background: hsla(0, 0%, 0%, 0.5);
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 40%;
-  padding: min(30vh, 10rem) 2em;
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(1px);
-  transform: ${(props) => (props.state ? "translateX(0)" : "translateX(100%)")};
-  @media screen and (min-width: 768px) {
-    position: static;
-    flex-direction: row;
-    padding: 0;
-    align-items: center;
-    justify-content: flex-end;
-    transform: translateX(0);
   }
 `;
 export const SearchContainer = styled.div`
@@ -88,23 +47,6 @@ export const SearchInput = styled.input<{
     outline: none;
     border: 3px solid lightblue;
     border-bottom: ${(props) => props.focused && props.data && "none"};
-  }
-`;
-export const NavItem = styled.li<{ type?: string }>`
-  width: 75%;
-  text-align: center;
-  position: relative;
-  ${(props) => props.type === "register" && "background-color:#0087ee"};
-  border-radius: 20px;
-  & + & {
-    margin-top: 10px;
-  }
-  @media screen and (min-width: 768px) {
-    width: fit-content;
-    & + & {
-      margin-left: 10px;
-      margin-top: 0;
-    }
   }
 `;
 export const SearchResultsContainer = styled.div<{
@@ -135,6 +77,79 @@ export const SearchResult = styled(Link)`
     color: black;
   }
 `;
+
+export const Nav = styled.ul<{ state: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  background: hsla(0, 0%, 0%, 0.5);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 40%;
+  padding: min(30vh, 10rem) 2em;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(1px);
+  transform: ${(props) => (props.state ? "translateX(0)" : "translateX(100%)")};
+  @media screen and (min-width: 768px) {
+    position: static;
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-end;
+    transform: translateX(0);
+  }
+`;
+export const NavItem = styled.li<{ type?: string }>`
+  width: 75%;
+  text-align: center;
+  position: relative;
+  ${(props) => props.type === "register" && "background-color:#0087ee"};
+  border-radius: 20px;
+  & + & {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    width: fit-content;
+    & + & {
+      margin-left: 10px;
+      margin-top: 0;
+    }
+  }
+`;
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+`;
+
+export const ProfilePicture = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+`;
+export const Image = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+`;
+export const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+`;
+export const StyledArrowDropDown = styled(ArrowDropDownIcon)`
+  display: none;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+`;
 export const UserAccordion = styled.div<{ state?: boolean }>`
   @media screen and (min-width: 768px) {
     transform: scaleY(0);
@@ -147,13 +162,6 @@ export const UserAccordion = styled.div<{ state?: boolean }>`
     background-color: black;
   }
 `;
-export const StyledArrowDropDown = styled(ArrowDropDownIcon)`
-  display: none;
-  cursor: pointer;
-  @media screen and (min-width: 768px) {
-    display: block;
-  }
-`;
 export const AccordionItem = styled.div`
   padding: 12px;
   cursor: pointer;
@@ -161,24 +169,7 @@ export const AccordionItem = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const ProfilePicture = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-`;
-export const Image = styled.img`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-`;
-export const Profile = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-`;
-export const User = styled.div``;
+
 export const NoResult = styled.div`
   width: 100%;
   min-height: 100px;
@@ -188,4 +179,26 @@ export const NoResult = styled.div`
   color: white;
   background-color: black;
   font-size: 1.2rem;
+`;
+export const StyledMenu = styled(Menu)`
+  display: block;
+  position: absolute;
+  right: 5px;
+  z-index: 1000;
+  cursor: pointer;
+  font-size: 2.4rem;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+export const StyledCloseIcon = styled(CloseIcon)`
+  display: block;
+  position: absolute;
+  right: 5px;
+  z-index: 1001;
+  cursor: pointer;
+  font-size: 2.4rem;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;

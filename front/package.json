@@ -1,9 +1,9 @@
 {
-  "name": "react-ecommerce",
+  "name": "todoapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "proxy": "http://192.168.1.90/",
+  "proxy": "https://todofullstackapp00.herokuapp.com/",
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"

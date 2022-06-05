@@ -13,7 +13,7 @@ import {
   Button,
   Edit,
 } from "./Components";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { toast } from "react-toastify";
 import { useUpdatePictureMutation } from "../../redux/api/apiSlice";
 import { updatePicture } from "../../redux/features/user/userSlice";
@@ -29,7 +29,6 @@ export default function MyProfile() {
   const dispatch = useDispatch();
   const [loadingState, setLoadingState] = useState(false);
   async function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
-    //@ts-ignore
     if (e.target.files) {
       try {
         const formData = new FormData();

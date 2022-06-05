@@ -30,6 +30,20 @@ export const ProfilePicture = styled.div`
   border-radius: 50%;
   overflow: hidden;
 `;
+export const Edit = styled.div`
+  display: flex;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+`;
 export const Image = styled.img`
   border-radius: 50%;
   width: 120px;
@@ -55,18 +69,4 @@ export const Button = styled.button`
   color: white;
   border-radius: 5px;
   cursor: pointer;
-`;
-export const Edit = styled.div`
-  display: flex;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  &:hover {
-    opacity: 1;
-  }
 `;
