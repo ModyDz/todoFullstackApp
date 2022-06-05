@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 const port = process.env.PORT || 5000;
 app.use("/api/user", userRoutes);
 app.use("/api/todo", todoRoutes);
-if (process.env.NODE_ENV) {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../front/dist")));
   app.get("*", (req: Request, res: Response) =>
     res.sendFile(path.resolve(__dirname, "../", "front", "dist", "index.html"))
