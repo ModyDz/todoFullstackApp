@@ -7,6 +7,7 @@ A simple todo app with fullstack features, it offers:
 - Check others' profile.
 # TechStack
 - Programming Langue: Typescript
+- State management: Redux/Redux Toolkit
 - Frontend: React
 - Backend: Nodejs/Express
 - API: REST API
