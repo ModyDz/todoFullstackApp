@@ -24,6 +24,7 @@ export const TodoContainer = styled.div`
   gap: 0.5rem;
   border: 1px solid black;
   margin-bottom: 0.5rem;
+  background-color: white;
 `;
 
 export const Container = styled.div`

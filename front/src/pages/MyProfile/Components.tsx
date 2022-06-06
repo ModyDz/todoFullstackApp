@@ -57,9 +57,6 @@ export const ProfileInfo = styled.div`
   display: flex;
   justify-content: center;
 `;
-export const TodosCount = styled.div`
-  margin-bottom: 3rem;
-`;
 export const FollowersCount = styled.div``;
 export const Button = styled.button`
   padding: 0.75rem 1.5rem;

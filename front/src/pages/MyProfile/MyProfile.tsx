@@ -9,7 +9,6 @@ import {
   ProfilePicture,
   Image,
   ProfileUsername,
-  TodosCount,
   Button,
   Edit,
 } from "./Components";
