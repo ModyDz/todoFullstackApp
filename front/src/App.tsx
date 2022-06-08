@@ -9,11 +9,13 @@ import "react-toastify/dist/ReactToastify.css";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import UserTodos from "./pages/UserTodos/UserTodos";
+import Footer from "./pages/Footer/Footer";
 
 export default function App() {
   return (
     <Router>
       <Header />
+
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -23,6 +25,7 @@ export default function App() {
         <Route path="/user/:username" element={<UserProfile />} />
         <Route path="/user/:username/todos" element={<UserTodos />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

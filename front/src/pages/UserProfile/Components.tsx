@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   padding: 2rem;
+  max-width: 1440px;
   background: url("https://res.cloudinary.com/dnici9sgk/image/upload/v1654335185/TodoApp/background_jl7vm9.jpg"),
     no-repeat, center;
+  margin: 0 auto;
 `;
 export const ProfileContainer = styled.div`
   display: flex;
